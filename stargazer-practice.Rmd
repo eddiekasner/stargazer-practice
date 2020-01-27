@@ -1,11 +1,11 @@
 ---
 title: "DEOHS Coders Group: Stargazer Practice"
 output:
-  md_document: default
-  word_document: default
   pdf_document:
     toc: true
     toc_depth: 3
+  word_document: default
+  md_document: default
   html_document:
     toc: true
     df_print: paged
@@ -104,20 +104,28 @@ stargazer(iris, type = "html", out="iris-table-summary.doc")
 
 **8. Creating single model in html**
 
-```{r iris-1-model, results='asis', eval=T}
+```{r iris-1-model-html, results='asis', eval=T}
 
-mtcars$fast <- as.numeric((mtcars$mpg > 20.1)) #Creating a dummy variable 1 = fast car
 m1 <- lm(Sepal.Length ~ Sepal.Width, data=iris)
 
 stargazer(m1, type="html")
 
 ```
 
-**9. Comparing three models in html**
+**9. Creating single model in pdf**
 
-```{r iris-3-models, results='asis', eval=T}
+```{r iris-1-model-pdf, results='asis', eval=T}
 
-mtcars$fast <- as.numeric((mtcars$mpg > 20.1)) #Creating a dummy variable 1 = fast car
+m1 <- lm(Sepal.Length ~ Sepal.Width, data=iris)
+
+stargazer(m1, type="latex")
+
+```
+
+**10. Comparing three models in html**
+
+```{r iris-3-models-html, results='asis', eval=T}
+
 m1 <- lm(Sepal.Length ~ Sepal.Width, data=iris)
 m2 <- lm(Petal.Length ~ Petal.Width, data=iris)
 m3 <- lm(Sepal.Length ~ Sepal.Width + Petal.Width + factor(Species), data=iris)
@@ -126,6 +134,17 @@ stargazer(m1, m2, m3, type="html")
 
 ```
 
+**11. Comparing three models in pdf**
+
+```{r iris-3-models-pdf, results='asis', eval=T}
+
+m1 <- lm(Sepal.Length ~ Sepal.Width, data=iris)
+m2 <- lm(Petal.Length ~ Petal.Width, data=iris)
+m3 <- lm(Sepal.Length ~ Sepal.Width + Petal.Width + factor(Species), data=iris)
+
+stargazer(m1, m2, m3, type="latex")
+
+```
 
 # Exercise with mtcars dataset
 
@@ -133,9 +152,7 @@ stargazer(m1, m2, m3, type="html")
 
 ```{r mtcars, results='asis', eval=F}
 
-
 summary(mtcars)
-
 
 mtcars$fast <- as.numeric((mtcars$mpg > 20.1)) #Creating a dummy variable 1 = fast car
 m1 <- lm(mpg ~ hp, data=mtcars)

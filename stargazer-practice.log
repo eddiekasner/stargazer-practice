@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.1.27)  27 JAN 2020 12:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.1.27)  27 JAN 2020 13:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -623,6 +623,9 @@ line 40.
 
 LaTeX Warning: Label `' multiply defined.
 
+
+LaTeX Warning: Label `' multiply defined.
+
 )
 \openout1 = `stargazer-practice.aux'.
 
@@ -863,45 +866,51 @@ d><td>1.199</td><td>0.762</td><td>0.100</td><td>0.300</td><td>1.800</td><td>2.5
  []
 
 [3] [4] [5] [6] [7] [8]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 750.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 742.
 [9]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 750.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 742.
 (./stargazer-practice.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 750.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 750.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 742.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 742.
 Package rerunfilecheck Info: File `stargazer-practice.out' has not changed.
 (rerunfilecheck)             Checksum: 46D9C0413977F6E7337C289819F1A691;1320.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 750.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 742.
  ) 
 Here is how much of TeX's memory you used:
- 13073 strings out of 494106
- 195207 string characters out of 6172014
+ 13074 strings out of 494106
+ 195214 string characters out of 6172014
  315617 words of memory out of 5000000
  16887 multiletter control sequences out of 15000+600000
  63834 words of font info for 75 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 40i,9n,42p,392b,450s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 40i,10n,42p,392b,450s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/Users/ejkasner/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-e
 c.enc}{c:/Users/ejkasner/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/
-lm-ts1.enc}<c:/Users/ejkasner/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/pu
-blic/lm/lmbx10.pfb><c:/Users/ejkasner/AppData/Roaming/TinyTeX/texmf-dist/fonts/
-type1/public/lm/lmbx12.pfb><c:/Users/ejkasner/AppData/Roaming/TinyTeX/texmf-dis
-t/fonts/type1/public/lm/lmbxi10.pfb><c:/Users/ejkasner/AppData/Roaming/TinyTeX/
-texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/ejkasner/AppData/Roaming/T
-inyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/Users/ejkasner/AppData/Ro
-aming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/Users/ejkasner/AppD
-ata/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/Users/ejkas
-ner/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb><c:/Use
-rs/ejkasner/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb
-><c:/Users/ejkasner/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lm
-tti10.pfb>
-Output written on stargazer-practice.pdf (9 pages, 239267 bytes).
+lm-mathit.enc}{c:/Users/ejkasner/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/d
+vips/lm/lm-rm.enc}{c:/Users/ejkasner/AppData/Roaming/TinyTeX/texmf-dist/fonts/e
+nc/dvips/lm/lm-mathsy.enc}{c:/Users/ejkasner/AppData/Roaming/TinyTeX/texmf-dist
+/fonts/enc/dvips/lm/lm-ts1.enc}<c:/Users/ejkasner/AppData/Roaming/TinyTeX/texmf
+-dist/fonts/type1/public/lm/lmbx10.pfb><c:/Users/ejkasner/AppData/Roaming/TinyT
+eX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/ejkasner/AppData/Roami
+ng/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb><c:/Users/ejkasner/AppD
+ata/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/Users/ejkas
+ner/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/User
+s/ejkasner/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb><
+c:/Users/ejkasner/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7
+.pfb><c:/Users/ejkasner/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/l
+m/lmri10.pfb><c:/Users/ejkasner/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/
+public/lm/lmsy10.pfb><c:/Users/ejkasner/AppData/Roaming/TinyTeX/texmf-dist/font
+s/type1/public/lm/lmsy7.pfb><c:/Users/ejkasner/AppData/Roaming/TinyTeX/texmf-di
+st/fonts/type1/public/lm/lmtk10.pfb><c:/Users/ejkasner/AppData/Roaming/TinyTeX/
+texmf-dist/fonts/type1/public/lm/lmtt10.pfb><c:/Users/ejkasner/AppData/Roaming/
+TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
+Output written on stargazer-practice.pdf (9 pages, 250897 bytes).
 PDF statistics:
- 156 PDF objects out of 1000 (max. 8388607)
- 133 compressed objects within 2 object streams
- 29 named destinations out of 1000 (max. 500000)
+ 174 PDF objects out of 1000 (max. 8388607)
+ 148 compressed objects within 2 object streams
+ 30 named destinations out of 1000 (max. 500000)
  12353 words of extra memory for PDF output out of 14400 (max. 10000000)
 
