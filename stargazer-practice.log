@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.1.27)  27 JAN 2020 13:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.1.27)  27 JAN 2020 13:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -626,6 +626,9 @@ LaTeX Warning: Label `' multiply defined.
 
 LaTeX Warning: Label `' multiply defined.
 
+
+LaTeX Warning: Label `' multiply defined.
+
 )
 \openout1 = `stargazer-practice.aux'.
 
@@ -865,24 +868,24 @@ d><td>1.199</td><td>0.762</td><td>0.100</td><td>0.300</td><td>1.800</td><td>2.5
 00</td></tr>[] 
  []
 
-[3] [4] [5] [6] [7] [8]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 742.
-[9]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 742.
+[3] [4] [5] [6] [7] [8] [9] [10]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 843.
+[11]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 843.
 (./stargazer-practice.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 742.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 742.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 843.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 843.
 Package rerunfilecheck Info: File `stargazer-practice.out' has not changed.
 (rerunfilecheck)             Checksum: 46D9C0413977F6E7337C289819F1A691;1320.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 742.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 843.
  ) 
 Here is how much of TeX's memory you used:
- 13074 strings out of 494106
- 195214 string characters out of 6172014
- 315617 words of memory out of 5000000
+ 13077 strings out of 494106
+ 195235 string characters out of 6172014
+ 316619 words of memory out of 5000000
  16887 multiletter control sequences out of 15000+600000
  63834 words of font info for 75 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -907,10 +910,10 @@ s/type1/public/lm/lmsy7.pfb><c:/Users/ejkasner/AppData/Roaming/TinyTeX/texmf-di
 st/fonts/type1/public/lm/lmtk10.pfb><c:/Users/ejkasner/AppData/Roaming/TinyTeX/
 texmf-dist/fonts/type1/public/lm/lmtt10.pfb><c:/Users/ejkasner/AppData/Roaming/
 TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on stargazer-practice.pdf (9 pages, 250897 bytes).
+Output written on stargazer-practice.pdf (11 pages, 253198 bytes).
 PDF statistics:
- 174 PDF objects out of 1000 (max. 8388607)
- 148 compressed objects within 2 object streams
- 30 named destinations out of 1000 (max. 500000)
+ 184 PDF objects out of 1000 (max. 8388607)
+ 156 compressed objects within 2 object streams
+ 33 named destinations out of 1000 (max. 500000)
  12353 words of extra memory for PDF output out of 14400 (max. 10000000)
 
