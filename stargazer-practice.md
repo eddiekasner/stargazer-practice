@@ -1,24 +1,36 @@
-Stargazer
----------
+Stargazer Overview
+==================
 
-Here’s a link to the [stargazer vingette on
+Here’s a link to the stargazer [package
+description](https://cran.r-project.org/web/packages/stargazer/stargazer.pdf)
+and [vingette on
 CRAN](https://cran.r-project.org/web/packages/stargazer/vignettes/stargazer.pdf).
 [This recent reddit
 thread](https://www.reddit.com/r/rstats/comments/8qn43z/what_is_the_best_package_for_displaying_tables_in/)
-discusses packages for displaying tables in R, including kabeExtra,
-pander, DT, Huxtable, and stargazer. Some users report that stargazer is
-fast and works easily with a set of regression model objects to produce
-near-publication quality tables, and can make it pretty siple to compare
-multiple models side-by-side. Other users, however, have reported
-challenges related to [hard coding, API, and
+discusses the ‘best’ packages for displaying tables in R, including
+kabeExtra, pander, DT, Huxtable, and stargazer. Some users report that
+stargazer is fast and works easily with a set of regression model
+objects to produce near-publication quality tables, and can make it
+pretty simple to compare multiple models side-by-side. Other users,
+however, have reported challenges related to [hard coding, API, and
 layout](https://www.reddit.com/r/rstats/comments/6o9v9h/whats_your_favorite_relatively_obscure_r_package/dkgw9q1/).
+Here’s a [stargazer cheat
+sheet](https://github.com/JakeRuss/cheatsheets/blob/master/stargazer.md)
+for formatting options.
 
-Presentation
-------------
+    library(pacman)
 
     ## Warning: package 'pacman' was built under R version 3.6.2
 
-### Step 1
+    p_load(stargazer)
+
+Exercise with iris dataset
+==========================
+
+Step 1: Display table summary of iris dataset
+---------------------------------------------
+
+    summary(iris)
 
     ##   Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   
     ##  Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  
@@ -35,9 +47,15 @@ Presentation
     ##                 
     ## 
 
+### PDF
+
+**1. Stargazer with default settings**
+
+    stargazer(iris)
+
     ## 
     ## % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-    ## % Date and time: Mon, Jan 27, 2020 - 11:02:49 AM
+    ## % Date and time: Mon, Jan 27, 2020 - 12:55:09 PM
     ## \begin{table}[!htbp] \centering 
     ##   \caption{} 
     ##   \label{} 
@@ -54,7 +72,21 @@ Presentation
     ## \end{tabular} 
     ## \end{table}
 
-#### Hard-coded (copy and paste from above chunk) works for pdf (but not html)
+**2. Hard-coded (copy and paste from above chunk) works for pdf (but not
+html)**
+
+**3. Adding results=‘asis’**
+
+    stargazer(iris)
+
+% Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard
+University. E-mail: hlavac at fas.harvard.edu % Date and time: Mon, Jan
+27, 2020 - 12:55:09 PM
+### HTML
+
+**4. Changing to type = html**
+
+    stargazer(iris, type = "html")
 
     ## 
     ## <table style="text-align:center"><tr><td colspan="8" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Statistic</td><td>N</td><td>Mean</td><td>St. Dev.</td><td>Min</td><td>Pctl(25)</td><td>Pctl(75)</td><td>Max</td></tr>
@@ -64,65 +96,932 @@ Presentation
     ## <tr><td style="text-align:left">Petal.Width</td><td>150</td><td>1.199</td><td>0.762</td><td>0.100</td><td>0.300</td><td>1.800</td><td>2.500</td></tr>
     ## <tr><td colspan="8" style="border-bottom: 1px solid black"></td></tr></table>
 
-### Step 2
+**5. Hard-coded (copy and paste from above chunk) works for html (but
+not pdf)**
 
-Exercise
---------
+<table style="text-align:center">
+<tr>
+<td colspan="8" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Statistic
+</td>
+<td>
+N
+</td>
+<td>
+Mean
+</td>
+<td>
+St. Dev.
+</td>
+<td>
+Min
+</td>
+<td>
+Pctl(25)
+</td>
+<td>
+Pctl(75)
+</td>
+<td>
+Max
+</td>
+</tr>
+<tr>
+<td colspan="8" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Sepal.Length
+</td>
+<td>
+150
+</td>
+<td>
+5.843
+</td>
+<td>
+0.828
+</td>
+<td>
+4.300
+</td>
+<td>
+5.100
+</td>
+<td>
+6.400
+</td>
+<td>
+7.900
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Sepal.Width
+</td>
+<td>
+150
+</td>
+<td>
+3.057
+</td>
+<td>
+0.436
+</td>
+<td>
+2.000
+</td>
+<td>
+2.800
+</td>
+<td>
+3.300
+</td>
+<td>
+4.400
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Petal.Length
+</td>
+<td>
+150
+</td>
+<td>
+3.758
+</td>
+<td>
+1.765
+</td>
+<td>
+1.000
+</td>
+<td>
+1.600
+</td>
+<td>
+5.100
+</td>
+<td>
+6.900
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Petal.Width
+</td>
+<td>
+150
+</td>
+<td>
+1.199
+</td>
+<td>
+0.762
+</td>
+<td>
+0.100
+</td>
+<td>
+0.300
+</td>
+<td>
+1.800
+</td>
+<td>
+2.500
+</td>
+</tr>
+<tr>
+<td colspan="8" style="border-bottom: 1px solid black">
+</td>
+</tr>
+</table>
 
-    ##       mpg             cyl             disp             hp       
-    ##  Min.   :10.40   Min.   :4.000   Min.   : 71.1   Min.   : 52.0  
-    ##  1st Qu.:15.43   1st Qu.:4.000   1st Qu.:120.8   1st Qu.: 96.5  
-    ##  Median :19.20   Median :6.000   Median :196.3   Median :123.0  
-    ##  Mean   :20.09   Mean   :6.188   Mean   :230.7   Mean   :146.7  
-    ##  3rd Qu.:22.80   3rd Qu.:8.000   3rd Qu.:326.0   3rd Qu.:180.0  
-    ##  Max.   :33.90   Max.   :8.000   Max.   :472.0   Max.   :335.0  
-    ##       drat             wt             qsec             vs        
-    ##  Min.   :2.760   Min.   :1.513   Min.   :14.50   Min.   :0.0000  
-    ##  1st Qu.:3.080   1st Qu.:2.581   1st Qu.:16.89   1st Qu.:0.0000  
-    ##  Median :3.695   Median :3.325   Median :17.71   Median :0.0000  
-    ##  Mean   :3.597   Mean   :3.217   Mean   :17.85   Mean   :0.4375  
-    ##  3rd Qu.:3.920   3rd Qu.:3.610   3rd Qu.:18.90   3rd Qu.:1.0000  
-    ##  Max.   :4.930   Max.   :5.424   Max.   :22.90   Max.   :1.0000  
-    ##        am              gear            carb      
-    ##  Min.   :0.0000   Min.   :3.000   Min.   :1.000  
-    ##  1st Qu.:0.0000   1st Qu.:3.000   1st Qu.:2.000  
-    ##  Median :0.0000   Median :4.000   Median :2.000  
-    ##  Mean   :0.4062   Mean   :3.688   Mean   :2.812  
-    ##  3rd Qu.:1.0000   3rd Qu.:4.000   3rd Qu.:4.000  
-    ##  Max.   :1.0000   Max.   :5.000   Max.   :8.000
+**6. Adding results=‘asis’**
 
-    ## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
+    stargazer(iris, type = "html")
 
-    ## 
-    ## <table style="text-align:center"><tr><td colspan="5" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"></td><td colspan="4"><em>Dependent variable:</em></td></tr>
-    ## <tr><td></td><td colspan="4" style="border-bottom: 1px solid black"></td></tr>
-    ## <tr><td style="text-align:left"></td><td colspan="3">Miles/(US) gallon</td><td>Fast car (=1)</td></tr>
-    ## <tr><td style="text-align:left"></td><td colspan="3"><em>OLS</em></td><td><em>logistic</em></td></tr>
-    ## <tr><td style="text-align:left"></td><td>(1)</td><td>(2)</td><td>(3)</td><td>(4)</td></tr>
-    ## <tr><td colspan="5" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Gross horsepower</td><td>-0.068<sup>***</sup></td><td>-0.052<sup>***</sup></td><td>-0.064<sup>***</sup></td><td>-0.397</td></tr>
-    ## <tr><td style="text-align:left"></td><td>(0.010)</td><td>(0.009)</td><td>(0.011)</td><td>(1.358)</td></tr>
-    ## <tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td></tr>
-    ## <tr><td style="text-align:left">Rear axle ratio</td><td></td><td>4.698<sup>***</sup></td><td>3.510<sup>*</sup></td><td>4.248</td></tr>
-    ## <tr><td style="text-align:left"></td><td></td><td>(1.192)</td><td>(1.851)</td><td>(21.106)</td></tr>
-    ## <tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td></tr>
-    ## <tr><td style="text-align:left">Four foward gears</td><td></td><td></td><td>-0.276</td><td></td></tr>
-    ## <tr><td style="text-align:left"></td><td></td><td></td><td>(2.135)</td><td></td></tr>
-    ## <tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td></tr>
-    ## <tr><td style="text-align:left">Five forward gears</td><td></td><td></td><td>3.761<sup>*</sup></td><td></td></tr>
-    ## <tr><td style="text-align:left"></td><td></td><td></td><td>(2.161)</td><td></td></tr>
-    ## <tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td></tr>
-    ## <tr><td style="text-align:left">Type of transmission (manual=1)</td><td></td><td></td><td></td><td>11.743</td></tr>
-    ## <tr><td style="text-align:left"></td><td></td><td></td><td></td><td>(359.486)</td></tr>
-    ## <tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td></tr>
-    ## <tr><td style="text-align:left">Constant</td><td>30.099<sup>***</sup></td><td>10.790<sup>**</sup></td><td>16.306<sup>**</sup></td><td>29.882</td></tr>
-    ## <tr><td style="text-align:left"></td><td>(1.634)</td><td>(5.078)</td><td>(6.429)</td><td>(85.238)</td></tr>
-    ## <tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td></tr>
-    ## <tr><td colspan="5" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Observations</td><td>32</td><td>32</td><td>32</td><td>32</td></tr>
-    ## <tr><td style="text-align:left">R<sup>2</sup></td><td>0.602</td><td>0.741</td><td>0.782</td><td></td></tr>
-    ## <tr><td style="text-align:left">Adjusted R<sup>2</sup></td><td>0.589</td><td>0.723</td><td>0.749</td><td></td></tr>
-    ## <tr><td style="text-align:left">Log Likelihood</td><td></td><td></td><td></td><td>-1.953</td></tr>
-    ## <tr><td style="text-align:left">Akaike Inf. Crit.</td><td></td><td></td><td></td><td>11.906</td></tr>
-    ## <tr><td style="text-align:left">Residual Std. Error</td><td>3.863 (df = 30)</td><td>3.170 (df = 29)</td><td>3.017 (df = 27)</td><td></td></tr>
-    ## <tr><td style="text-align:left">F Statistic</td><td>45.460<sup>***</sup> (df = 1; 30)</td><td>41.522<sup>***</sup> (df = 2; 29)</td><td>24.179<sup>***</sup> (df = 4; 27)</td><td></td></tr>
-    ## <tr><td colspan="5" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"><em>Note:</em></td><td colspan="4" style="text-align:right"><sup>*</sup>p<0.1; <sup>**</sup>p<0.05; <sup>***</sup>p<0.01</td></tr>
-    ## </table>
+<table style="text-align:center">
+<tr>
+<td colspan="8" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Statistic
+</td>
+<td>
+N
+</td>
+<td>
+Mean
+</td>
+<td>
+St. Dev.
+</td>
+<td>
+Min
+</td>
+<td>
+Pctl(25)
+</td>
+<td>
+Pctl(75)
+</td>
+<td>
+Max
+</td>
+</tr>
+<tr>
+<td colspan="8" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Sepal.Length
+</td>
+<td>
+150
+</td>
+<td>
+5.843
+</td>
+<td>
+0.828
+</td>
+<td>
+4.300
+</td>
+<td>
+5.100
+</td>
+<td>
+6.400
+</td>
+<td>
+7.900
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Sepal.Width
+</td>
+<td>
+150
+</td>
+<td>
+3.057
+</td>
+<td>
+0.436
+</td>
+<td>
+2.000
+</td>
+<td>
+2.800
+</td>
+<td>
+3.300
+</td>
+<td>
+4.400
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Petal.Length
+</td>
+<td>
+150
+</td>
+<td>
+3.758
+</td>
+<td>
+1.765
+</td>
+<td>
+1.000
+</td>
+<td>
+1.600
+</td>
+<td>
+5.100
+</td>
+<td>
+6.900
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Petal.Width
+</td>
+<td>
+150
+</td>
+<td>
+1.199
+</td>
+<td>
+0.762
+</td>
+<td>
+0.100
+</td>
+<td>
+0.300
+</td>
+<td>
+1.800
+</td>
+<td>
+2.500
+</td>
+</tr>
+<tr>
+<td colspan="8" style="border-bottom: 1px solid black">
+</td>
+</tr>
+</table>
+
+### DOC
+
+**7. Creating single table in word**
+
+    stargazer(iris, type = "html", out="iris-table-summary.doc")
+
+<table style="text-align:center">
+<tr>
+<td colspan="8" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Statistic
+</td>
+<td>
+N
+</td>
+<td>
+Mean
+</td>
+<td>
+St. Dev.
+</td>
+<td>
+Min
+</td>
+<td>
+Pctl(25)
+</td>
+<td>
+Pctl(75)
+</td>
+<td>
+Max
+</td>
+</tr>
+<tr>
+<td colspan="8" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Sepal.Length
+</td>
+<td>
+150
+</td>
+<td>
+5.843
+</td>
+<td>
+0.828
+</td>
+<td>
+4.300
+</td>
+<td>
+5.100
+</td>
+<td>
+6.400
+</td>
+<td>
+7.900
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Sepal.Width
+</td>
+<td>
+150
+</td>
+<td>
+3.057
+</td>
+<td>
+0.436
+</td>
+<td>
+2.000
+</td>
+<td>
+2.800
+</td>
+<td>
+3.300
+</td>
+<td>
+4.400
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Petal.Length
+</td>
+<td>
+150
+</td>
+<td>
+3.758
+</td>
+<td>
+1.765
+</td>
+<td>
+1.000
+</td>
+<td>
+1.600
+</td>
+<td>
+5.100
+</td>
+<td>
+6.900
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Petal.Width
+</td>
+<td>
+150
+</td>
+<td>
+1.199
+</td>
+<td>
+0.762
+</td>
+<td>
+0.100
+</td>
+<td>
+0.300
+</td>
+<td>
+1.800
+</td>
+<td>
+2.500
+</td>
+</tr>
+<tr>
+<td colspan="8" style="border-bottom: 1px solid black">
+</td>
+</tr>
+</table>
+
+> “To include stargazer tables in Microsoft Word documents (e.g., .doc
+> or .docx), please follow the following procedure: Use the out argument
+> to save output into an .htm or .html file. Open the resulting file in
+> your web browser. Copy and paste the table from the web browser to
+> your Microsoft Word document.” -[Using stargazer in
+> Word](https://cran.r-project.org/web/packages/stargazer/stargazer.pdf)
+
+Step 2: Display table models of iris dataset
+--------------------------------------------
+
+**8. Creating single model in html**
+
+    mtcars$fast <- as.numeric((mtcars$mpg > 20.1)) #Creating a dummy variable 1 = fast car
+    m1 <- lm(Sepal.Length ~ Sepal.Width, data=iris)
+
+    stargazer(m1, type="html")
+
+<table style="text-align:center">
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+<em>Dependent variable:</em>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+Sepal.Length
+</td>
+</tr>
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Sepal.Width
+</td>
+<td>
+-0.223
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(0.155)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Constant
+</td>
+<td>
+6.526<sup>\*\*\*</sup>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(0.479)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Observations
+</td>
+<td>
+150
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+R<sup>2</sup>
+</td>
+<td>
+0.014
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Adjusted R<sup>2</sup>
+</td>
+<td>
+0.007
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Residual Std. Error
+</td>
+<td>
+0.825 (df = 148)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+F Statistic
+</td>
+<td>
+2.074 (df = 1; 148)
+</td>
+</tr>
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+<em>Note:</em>
+</td>
+<td style="text-align:right">
+<sup>*</sup>p&lt;0.1; <sup>**</sup>p&lt;0.05; <sup>***</sup>p&lt;0.01
+</td>
+</tr>
+</table>
+
+**9. Comparing three models in html**
+
+    mtcars$fast <- as.numeric((mtcars$mpg > 20.1)) #Creating a dummy variable 1 = fast car
+    m1 <- lm(Sepal.Length ~ Sepal.Width, data=iris)
+    m2 <- lm(Petal.Length ~ Petal.Width, data=iris)
+    m3 <- lm(Sepal.Length ~ Sepal.Width + Petal.Width + factor(Species), data=iris)
+
+    stargazer(m1, m2, m3, type="html")
+
+<table style="text-align:center">
+<tr>
+<td colspan="4" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td colspan="3">
+<em>Dependent variable:</em>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="3" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+Sepal.Length
+</td>
+<td>
+Petal.Length
+</td>
+<td>
+Sepal.Length
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(1)
+</td>
+<td>
+(2)
+</td>
+<td>
+(3)
+</td>
+</tr>
+<tr>
+<td colspan="4" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Sepal.Width
+</td>
+<td>
+-0.223
+</td>
+<td>
+</td>
+<td>
+0.698<sup>\*\*\*</sup>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(0.155)
+</td>
+<td>
+</td>
+<td>
+(0.119)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Petal.Width
+</td>
+<td>
+</td>
+<td>
+2.230<sup>\*\*\*</sup>
+</td>
+<td>
+0.372<sup>\*</sup>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+(0.051)
+</td>
+<td>
+(0.198)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+factor(Species)versicolor
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+0.988<sup>\*\*\*</sup>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+(0.275)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+factor(Species)virginica
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+1.238<sup>\*\*\*</sup>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+(0.391)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Constant
+</td>
+<td>
+6.526<sup>\*\*\*</sup>
+</td>
+<td>
+1.084<sup>\*\*\*</sup>
+</td>
+<td>
+2.521<sup>\*\*\*</sup>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(0.479)
+</td>
+<td>
+(0.073)
+</td>
+<td>
+(0.394)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td colspan="4" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Observations
+</td>
+<td>
+150
+</td>
+<td>
+150
+</td>
+<td>
+150
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+R<sup>2</sup>
+</td>
+<td>
+0.014
+</td>
+<td>
+0.927
+</td>
+<td>
+0.732
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Adjusted R<sup>2</sup>
+</td>
+<td>
+0.007
+</td>
+<td>
+0.927
+</td>
+<td>
+0.725
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Residual Std. Error
+</td>
+<td>
+0.825 (df = 148)
+</td>
+<td>
+0.478 (df = 148)
+</td>
+<td>
+0.434 (df = 145)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+F Statistic
+</td>
+<td>
+2.074 (df = 1; 148)
+</td>
+<td>
+1,882.452<sup>\*\*\*</sup> (df = 1; 148)
+</td>
+<td>
+99.206<sup>\*\*\*</sup> (df = 4; 145)
+</td>
+</tr>
+<tr>
+<td colspan="4" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+<em>Note:</em>
+</td>
+<td colspan="3" style="text-align:right">
+<sup>*</sup>p&lt;0.1; <sup>**</sup>p&lt;0.05; <sup>***</sup>p&lt;0.01
+</td>
+</tr>
+</table>
+
+Exercise with mtcars dataset
+============================
+
+<!--Source: https://www.princeton.edu/~otorres/NiceOutputR.pdf-->
+
+    summary(mtcars)
+
+
+    mtcars$fast <- as.numeric((mtcars$mpg > 20.1)) #Creating a dummy variable 1 = fast car
+    m1 <- lm(mpg ~ hp, data=mtcars)
+    m2 <- lm(mpg ~ hp + drat, data=mtcars)
+    m3 <- lm(mpg ~ hp + drat + factor(gear), data=mtcars)
+    m4 <- glm(fast ~ hp + drat + am, family=binomial(link="logit"), data=mtcars)
+    stargazer(m1, m2, m3, m4, type="html",
+     dep.var.labels=c("Miles/(US) gallon","Fast car (=1)"),
+     covariate.labels=c("Gross horsepower","Rear axle ratio","Four foward gears",
+     "Five forward gears","Type of transmission (manual=1)"), out="models.htm")
