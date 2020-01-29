@@ -130,7 +130,7 @@ m1 <- lm(Sepal.Length ~ Sepal.Width, data=iris)
 m2 <- lm(Petal.Length ~ Petal.Width, data=iris)
 m3 <- lm(Sepal.Length ~ Sepal.Width + Petal.Width + factor(Species), data=iris)
 
-stargazer(m1, m2, m3, type="html")
+stargazer(m1, m2, m3, type="html",  out="iris-table-summary-2.doc")
 
 ```
 
